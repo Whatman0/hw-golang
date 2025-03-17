@@ -10,6 +10,8 @@ import (
 func main() {
 	numChan, resChan := make(chan int), make(chan int)
 	var wg sync.WaitGroup
+	
+	rand.NewSource(time.Now().UnixNano())
 	for range 10 {
 		wg.Add(1)
 		go func() {
